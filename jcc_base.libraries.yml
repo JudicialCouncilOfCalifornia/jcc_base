@@ -1,0 +1,15 @@
+style:
+  version: 1.0.0-alpha1
+  css:
+    theme:
+      assets/css/jcc_base.style.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+courtyard:
+  css:
+    theme:
+      ../../../libraries/courtyard-artifact/public/css/styles.min.css: {}
+  js:
+    ../../../libraries/courtyard-artifact/public/js/scripts.min.js: { minified: true, preprocess: false }
