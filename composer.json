@@ -1,5 +1,5 @@
 {
-  "name": "judicial-council-of-california/jcc_base",
+  "name": "judicialcouncil/jcc_base",
   "description" : "JCCBase is a base theme for Drupal. Integrates Exygy/courtyard pattern library.",
   "type": "drupal-theme",
   "version": "1.0.0-alpha4",
@@ -25,7 +25,7 @@
   },
   "require": {
     "drupal/components": "^1.0",
-    "chapterthree/courtyard-artifact": "~0.0.4"
+    "judicialcouncil/courtyard-artifact": "~0.0.4"
   },
   "autoload": {
     "psr-4": {
