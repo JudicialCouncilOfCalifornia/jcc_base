@@ -1,0 +1,22 @@
+// Styles for featured links menu.
+// ------------------------------
+
+.menu--featured-links {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style: none;
+
+  .menu-item--featured {
+    // This with the margin will set 4 items per row.
+    flex: 1 0 23%;
+    margin: 1%;
+    text-align: center;
+    align-self: flex-end;
+  }
+
+  .menu-link-contentfeatured-links img {
+    height: 50px;
+    width: 50px;
+  }
+}
