@@ -28,6 +28,32 @@ function jcc_base_preprocess_menu(&$variables, $hook) {
       $item['url']->setOption('html', TRUE);
     }
   }
+  // Set extra content on main menu items.
+  if ($variables['menu_name'] == 'main') {
+    foreach ($variables['items'] as $key => $item) {
+      jcc_base_main_menu_set_content($item);
+      $variables['items'][$key] = $item;
+    }
+  }
+}
+
+/**
+ * Recursive function to set icon values on menu items.
+ *
+ * @param  array &$item
+ *   The menu item.
+ */
+function jcc_base_main_menu_set_content(&$item) {
+  $icon = !empty($item['content']['#menu_link_content']->field_fa_icon) ? $item['content']['#menu_link_content']->field_fa_icon->first() : '';
+  $item['content']['icon'] = !empty($icon) ? ['#markup' => $icon->value] : [];
+
+  $text = !empty($item['content']['#menu_link_content']->field_text) ? $item['content']['#menu_link_content']->field_text->first() : '';
+  $item['content']['text'] = !empty($text) ? ['#markup' => $text->value] : [];
+
+  foreach ($item['below'] as $key => $child) {
+    jcc_base_main_menu_set_content($child);
+    $item['below'][$key] = $child;
+  }
 }
 
 /**
