@@ -17,12 +17,10 @@
           $('#mega-menu ul').addClass('display-none');
           $(subMenuTarget).removeClass('display-none');
           $(this).addClass('mega-menu-open');
-          console.log($(this));
         }
         else {
           $('#mega-menu ul').addClass('display-none');
           $(this).removeClass('mega-menu-open');
-          console.log($(this));
         }
       });
     }
