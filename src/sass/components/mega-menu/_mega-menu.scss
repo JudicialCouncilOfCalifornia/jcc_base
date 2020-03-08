@@ -19,9 +19,32 @@
     margin-left: 0;
   }
 
-  .mega-menu-sub > ul > div > li > a {
-    font-weight: bold;
-    font-size: 1.1rem;
+  .mega-menu-sub > ul {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    > div {
+      width: 25%;
+      flex: 1 0 auto;
+
+      > li {
+
+        > a {
+          font-weight: bold;
+          font-size: 1.1rem;
+        }
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          > div {
+            flex: 1 0 auto;
+          }
+        }
+      }
+    }
   }
 
   .mega-menu-item-text {
@@ -35,7 +58,7 @@
 #slick-menu {
   @media screen and (min-width: 1024px) {
     li {
-      > a {
+      > a.has-children {
         &::after {
           @include icon-after;
           content: '\f107';

@@ -28,9 +28,10 @@
         item.is_expanded ? 'jcc-header_nav__item--expanded',
         item.is_collapsed ? 'jcc-header_nav__item--collapsed',
         item.in_active_trail ? 'jcc-header_nav__item--active-trail',
+        item.below ? 'has-children'
       ] %}
       <li>
-        <a href="{{item.url}}" {{ item.attributes.addClass(classes) }} data-mega-menu-id="{{ item.title|clean_id }}">{{ item.content.icon }}{{ item.title }}</a>
+        <a href="{{ item.url }}" {{ item.attributes.addClass(classes) }} data-mega-menu-id="{{ item.title|clean_id }}">{{ item.content.icon }}{{ item.title }}</a>
         {% if item.below %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
@@ -64,7 +65,7 @@
           item.in_active_trail ? 'jcc-header_nav__item--active-trail',
         ] %}
         <li>
-          <a href="item.url" {{ item.attributes.addClass(classes) }}>{{ item.content.icon }}{{ item.title }}</a>
+          <a href="{{ item.url }}" {{ item.attributes.addClass(classes) }}>{{ item.content.icon }}{{ item.title }}</a>
           {% if item.content.text %}
             <div class="mega-menu-item-text">{{item.content.text}}</div>
           {% endif %}
