@@ -1,1 +1,216 @@
-!function(e){var t={};function a(n){if(t[n])return t[n].exports;var r=t[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,a),r.l=!0,r.exports}a.m=e,a.c=t,a.d=function(e,t,n){a.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,t){if(1&t&&(e=a(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(a.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)a.d(n,r,function(t){return e[t]}.bind(null,r));return n},a.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(t,"a",t),t},a.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},a.p="/",a(a.s=0)}([function(e,t,a){a(1),e.exports=a(4)},function(e,t,a){"use strict";a.r(t);a(2),a(3)},function(e,t){!function(){"use strict";Drupal.theme.message=function(e,t){var a=e.text,n=t.type,r=t.id,s={error:{class:"error",label:Drupal.t("Error message"),role:"alert"},info:{class:"info",label:Drupal.t("Informational message"),role:"status"},status:{class:"success",label:Drupal.t("Success message"),role:"status"},warning:{class:"warning",label:Drupal.t("Warning message"),role:"alert"}},l=document.createElement("div");return l.setAttribute("class","usa-alert usa-alert--".concat(s[n].class)),l.setAttribute("role",s[n].role),l.setAttribute("aria-label",s[n].label),l.setAttribute("data-drupal-message-id",r),l.setAttribute("data-drupal-message-type",n),l.innerHTML='\n      <div class="usa-alert__body">\n        <p class="usa-alert__text">\n          '.concat(a,"\n        </p>\n      </div>"),l}}(jQuery,Drupal)},function(e,t){!function(e){"use strict";Drupal.behaviors.megaMenu={attach:function(t){var a=e("#slick-menu li > a");a.once("megaMenuToggle").click((function(t){if(e(this).hasClass("has-children")){t.preventDefault();var n=e(this).attr("data-mega-menu-id"),r=e("#mega-menu #"+n+" ul");a.removeClass("mega-menu-open"),r.hasClass("display-none")?(e("#mega-menu ul").addClass("display-none"),e(r).removeClass("display-none"),e(this).addClass("mega-menu-open")):(e("#mega-menu ul").addClass("display-none"),e(this).removeClass("mega-menu-open"))}}))}}}(jQuery,Drupal)},function(e,t){}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/js/components/mega-menu.js":
+/*!****************************************!*\
+  !*** ./src/js/components/mega-menu.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function ($) {
+  "use strict";
+
+  Drupal.behaviors.megaMenu = {
+    attach: function attach(context) {
+      var mainLinks = $('#slick-menu li > a');
+      mainLinks.once('megaMenuToggle').click(function (e) {
+        if ($(this).hasClass('has-children')) {
+          e.preventDefault();
+          var megaId = $(this).attr('data-mega-menu-id');
+          var subMenuTarget = $('#mega-menu #' + megaId + ' ul');
+          mainLinks.removeClass('mega-menu-open');
+
+          if (subMenuTarget.hasClass('display-none')) {
+            $('#mega-menu ul').addClass('display-none');
+            $(subMenuTarget).removeClass('display-none');
+            $(this).addClass('mega-menu-open');
+          } else {
+            $('#mega-menu ul').addClass('display-none');
+            $(this).removeClass('mega-menu-open');
+          }
+        }
+      });
+    }
+  };
+})(jQuery, Drupal);
+
+/***/ }),
+
+/***/ "./src/js/components/messages.js":
+/*!***************************************!*\
+  !*** ./src/js/components/messages.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function () {
+  'use strict';
+
+  Drupal.theme.message = function (_ref, _ref2) {
+    var text = _ref.text;
+    var type = _ref2.type,
+        id = _ref2.id;
+    var types = {
+      error: {
+        "class": 'error',
+        label: Drupal.t('Error message'),
+        role: 'alert'
+      },
+      info: {
+        "class": 'info',
+        label: Drupal.t('Informational message'),
+        role: 'status'
+      },
+      status: {
+        "class": 'success',
+        label: Drupal.t('Success message'),
+        role: 'status'
+      },
+      warning: {
+        "class": 'warning',
+        label: Drupal.t('Warning message'),
+        role: 'alert'
+      }
+    };
+    var messageWrapper = document.createElement('div');
+    messageWrapper.setAttribute('class', "usa-alert usa-alert--".concat(types[type]["class"]));
+    messageWrapper.setAttribute('role', types[type].role);
+    messageWrapper.setAttribute('aria-label', types[type].label);
+    messageWrapper.setAttribute('data-drupal-message-id', id);
+    messageWrapper.setAttribute('data-drupal-message-type', type);
+    messageWrapper.innerHTML = "\n      <div class=\"usa-alert__body\">\n        <p class=\"usa-alert__text\">\n          ".concat(text, "\n        </p>\n      </div>");
+    return messageWrapper;
+  };
+})(jQuery, Drupal);
+
+/***/ }),
+
+/***/ "./src/js/jcc_base.script.js":
+/*!***********************************!*\
+  !*** ./src/js/jcc_base.script.js ***!
+  \***********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_messages__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/messages */ "./src/js/components/messages.js");
+/* harmony import */ var _components_messages__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_messages__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_mega_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/mega-menu */ "./src/js/components/mega-menu.js");
+/* harmony import */ var _components_mega_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_mega_menu__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+/***/ }),
+
+/***/ "./src/sass/jcc_base.style.scss":
+/*!**************************************!*\
+  !*** ./src/sass/jcc_base.style.scss ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!************************************************************************!*\
+  !*** multi ./src/js/jcc_base.script.js ./src/sass/jcc_base.style.scss ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /app/web/themes/contrib/jcc_base/src/js/jcc_base.script.js */"./src/js/jcc_base.script.js");
+module.exports = __webpack_require__(/*! /app/web/themes/contrib/jcc_base/src/sass/jcc_base.style.scss */"./src/sass/jcc_base.style.scss");
+
+
+/***/ })
+
+/******/ });
