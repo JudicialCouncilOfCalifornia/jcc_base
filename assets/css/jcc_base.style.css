@@ -965,6 +965,73 @@ svg.ext {
   margin: 0 0.25rem;
 }
 
+.page__secondary_footer {
+  margin: 0;
+  padding: 2rem;
+}
+
+.page__secondary_footer nav {
+  margin: 0 auto;
+  max-width: 64rem;
+  padding: 0 2rem;
+}
+
+.page__secondary_footer nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page__secondary_footer nav ul a {
+  display: block;
+  padding: 0.5rem 0;
+}
+
+.page__secondary_footer nav > ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.page__secondary_footer nav > ul > li {
+  flex: 1 0 auto;
+  width: 100%;
+  border-top: 4px solid #28a0cb;
+}
+
+.page__secondary_footer nav > ul > li > a {
+  display: block;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+@media screen and (min-width: 32rem) {
+  .page__secondary_footer nav > ul {
+    flex-direction: row;
+  }
+
+  .page__secondary_footer nav > ul > li {
+    max-width: 44%;
+    margin: 0 3% 1rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .page__secondary_footer nav > ul {
+    flex-direction: row;
+  }
+
+  .page__secondary_footer nav > ul > li {
+    max-width: 27%;
+    margin: 0 3% 1rem;
+  }
+}
+
 .page__footer {
   text-align: center;
   color: #f0f0f0;

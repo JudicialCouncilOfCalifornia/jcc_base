@@ -101,6 +101,12 @@
     {% endif %}
   </main>
 
+  {% if page.secondary_footer %}
+    <footer class="page__secondary_footer bg-primary-lighter" role="contentinfo">
+      {{ page.secondary_footer }}
+    </footer>
+  {% endif %}
+
   {% if page.footer %}
     <footer class="page__footer bg-primary-darker" role="contentinfo">
       {{ page.footer }}
