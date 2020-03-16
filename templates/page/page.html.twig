@@ -62,14 +62,22 @@
     </div>
   {% endif %}
 
-  {% set nodes_with_hero = [
-    'srl_howto_instruction',
-    'srl_howto',
-    'srl_onramp',
-    'srl_wayfinder',
+  {%  if page.breadcrumb|render %}
+    {{ page.breadcrumb }}
+  {% endif %}
+
+  {# Specify content types by nodes that do not require hero title component #}
+  {% set nodes_without_titles = [
+    'page',
+    'book',
+    'document',
+    'event',
+    'job',
+    'news',
+    'person',
   ] %}
 
-  {% if page.title|render and node.bundle() not in nodes_with_hero %}
+  {% if page.title|render and node.bundle() not in nodes_without_titles %}
     <div class="page__title">
       {{ page.title }}
     </div>
@@ -77,6 +85,10 @@
 
   <main>
     <a id="main-content" tabindex="-1"></a> {# link is in html.html.twig #}
+
+    <div class="page__left_sidebar">
+      {{ page.left_sidebar }}
+    </div>
 
     <div class="page__content">
       {{ page.content }}
@@ -90,7 +102,7 @@
   </main>
 
   {% if page.footer %}
-    <footer class="page__footer" role="contentinfo">
+    <footer class="page__footer bg-primary-darker" role="contentinfo">
       {{ page.footer }}
     </footer>
   {% endif %}

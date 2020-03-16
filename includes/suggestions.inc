@@ -24,3 +24,11 @@ function jcc_base_theme_suggestions_user_alter(array &$suggestions, array $varia
   // Add a suggestion based on the view mode.
   $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['elements']['#view_mode'];
 }
+
+/**
+ * Implements HOOK_theme_suggestions_HOOK_alter().
+ */
+function jcc_base_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+  // Add a suggestion based on the view mode.
+  $suggestions[] = $variables['theme_hook_original'] . '__' . $variables['elements']['#region'];
+}
