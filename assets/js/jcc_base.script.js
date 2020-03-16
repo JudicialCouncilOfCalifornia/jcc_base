@@ -184,8 +184,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_messages__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_messages__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_mega_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/mega-menu */ "./src/js/components/mega-menu.js");
 /* harmony import */ var _components_mega_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_mega_menu__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _smooth_scroll_links__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./smooth-scroll-links */ "./src/js/smooth-scroll-links.js");
+/* harmony import */ var _smooth_scroll_links__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_smooth_scroll_links__WEBPACK_IMPORTED_MODULE_2__);
 
 
+
+
+/***/ }),
+
+/***/ "./src/js/smooth-scroll-links.js":
+/*!***************************************!*\
+  !*** ./src/js/smooth-scroll-links.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function ($, Drupal) {
+  'use strict';
+
+  Drupal.behaviors.smoothScrollLinks = {
+    attach: function attach(context) {
+      $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top - 100
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    }
+  };
+})(jQuery, Drupal);
 
 /***/ }),
 
