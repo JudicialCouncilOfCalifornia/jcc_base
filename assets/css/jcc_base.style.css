@@ -593,6 +593,33 @@ General colors
 ----------------------------------------
 */
 
+.view-location.view-display-id-block {
+  display: flex;
+  flex-direction: row;
+}
+
+.view-location.view-display-id-block .location-sidebar {
+  flex: 1 0 auto;
+  height: 500px;
+  overflow-y: auto;
+  background: #1b1b1b;
+  color: #f0f0f0;
+  padding: 3rem;
+}
+
+.view-location.view-display-id-block .location-sidebar__location {
+  margin: 1rem 0;
+}
+
+.view-location.view-display-id-block .location-sidebar__location i {
+  margin-right: 1rem;
+  color: #04c585;
+}
+
+.view-location.view-display-id-block .view__content {
+  flex: 7 0 auto;
+}
+
 .menu--featured-links {
   display: flex;
   flex-wrap: wrap;
@@ -886,6 +913,14 @@ li.pager__item__ellipsis {
 .is-horizontal .nav-tabs--secondary .nav-tabs__link:after {
   display: block;
   background-color: color("blue-warm-60v");
+}
+
+.geolocation-map-wrapper .leaflet-popup .location--map-card > div {
+  margin: 1rem 0;
+}
+
+.geolocation-map-wrapper .leaflet-popup .location--map-card svg.ext {
+  display: none;
 }
 
 /**
