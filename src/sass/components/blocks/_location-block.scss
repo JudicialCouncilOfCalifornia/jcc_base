@@ -15,6 +15,11 @@
       &__location {
         margin: 1rem 0;
 
+        a {
+          text-decoration: underline;
+          color: $theme-color-base-lightest;
+        }
+
         i {
           margin-right: 1rem;
           color: $theme-color-accent-cool;
